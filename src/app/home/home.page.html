@@ -1,0 +1,51 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Calculadora do Amor
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large"> Calculadora do Amor </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container" class="justify-content-center mt -4">
+
+    <h4>Descubra a porcentagem de amor entre duas pessoas: </h4>
+
+    <br>
+
+    <p>Digite o primeiro nome: </p>
+    <ion-item>
+      <ion-input type="text" id="input" class="form-control" [(ngModel)]="primeiroNome"></ion-input>
+    </ion-item>
+
+    <p>Digite o segundo nome: </p>
+    <ion-item> 
+      <ion-input type="text" id="input" [(ngModel)]="segundoNome"></ion-input>
+    </ion-item>
+
+    <br>
+
+    <ion-button (click)="enviarDados()">Calcular</ion-button>
+
+    <img src="{{img}}" alt="">
+
+    <br>
+    <br>
+
+    <ion-label>A porcentagem entre essas pessoas é de: </ion-label>
+    
+    <br>
+    <br>
+
+    <ion-label>{{ resultado }}% <br> <br> {{ mensagem }}</ion-label> 
+  
+  </div>
+</ion-content>
+
