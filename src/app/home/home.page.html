@@ -16,16 +16,16 @@
 
   <div id="container" class="justify-content-center mt -4">
 
-    <h4>Descubra a porcentagem de amor entre duas pessoas: </h4>
+    <h4>Descubra suas chances com seu amor: </h4>
 
     <br>
 
-    <p>Digite o primeiro nome: </p>
+    <p>Digite seu nome: </p>
     <ion-item>
       <ion-input type="text" id="input" class="form-control" [(ngModel)]="primeiroNome"></ion-input>
     </ion-item>
 
-    <p>Digite o segundo nome: </p>
+    <p>Digite o nome da pessoa: </p>
     <ion-item> 
       <ion-input type="text" id="input" [(ngModel)]="segundoNome"></ion-input>
     </ion-item>
@@ -33,8 +33,6 @@
     <br>
 
     <ion-button (click)="enviarDados()">Calcular</ion-button>
-
-    <img src="{{img}}" alt="">
 
     <br>
     <br>
@@ -44,7 +42,11 @@
     <br>
     <br>
 
-    <ion-label>{{ resultado }}% <br> <br> {{ mensagem }}</ion-label> 
+    <p [class.painel]="calculando" [class.scale-up-center]="!calculando" class="mt-3 text-center" id="resultado">{{ resultado }} % </p>
+    <br>
+    <p id="mensagem">{{ mensagem }}</p>
+    
+    <div class="altura-imagem"><img [class.d-none]="!imagem" src="{{img}}"></div>
   
   </div>
 </ion-content>
